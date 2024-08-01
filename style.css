@@ -1,0 +1,271 @@
+@charset "UTF-8";
+@import url(css/reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+
+body {
+  font-family: 'Noto Sans CJK JP','noto-sans-cjk-jp', 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  color: #655046;
+  word-break: break-all;
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+}
+a {
+  color: #333;
+  text-decoration: none;
+  transition: .3s;
+}
+a.hover {
+  opacity: 0.3; 
+  /* 透明度を下げる */
+  color: white;
+  transition: .3s;
+}
+/* 赤線の中がinner */
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  /* 横並びではみ出したものは折り返される */
+  justify-content: space-between;
+  /* 両端に余白が無い状態で均等配置される */
+}
+
+.pc { display: block; }
+.sp { display: none; }
+@media screen and (max-width: 768px) {
+  .pc {display: none; }
+  .sp { display: block; }
+}
+
+header {
+  background: #124222;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 9999;
+  /* 数値が大きい方が手前 */
+}
+header .h_box {
+  height: 148px;
+  display: flex;
+  flex-direction: column;
+  /* display flexで指定したアイテムを上から下に配置 */
+  justify-content: center;
+  /* 子要素が中央による */
+  align-items: center;
+  /* 縦方向の配置を決める（中央に寄せる） */
+}
+header .h_box.flex {
+  align-items: center;
+}
+header h1 {
+  margin-bottom: 20px;
+}
+header .h_nav {
+  width: 52%;
+}
+
+header ul li a {
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+@media screen and  (max-width: 1200px) {
+  header .h_box {
+    padding: 20px 10px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  header nav {
+    display: none;
+  }
+}
+
+/* コンテンツ全体 */
+#content {
+  margin-top: 80px;
+}
+@media screen and (max-width: 1200px) {
+  #content {
+    margin-top: 60px;
+  }
+}
+img { max-width: 100%;}
+
+/* アイキャッチ */
+section.eye {
+  background: url(./img/mv.jpg) no-repeat center right;
+  padding: 100px;
+  background-size: cover;
+}
+section.eye .box {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 80px);
+}
+section.eye p.cp {
+  font-size: 40px;
+  font-family: 'Shippori Mincho', serif;
+  letter-spacing: 0.2em;
+}
+@media screen and (max-width: 1200px) { 
+  section.eye .box {
+    height: calc(50vh - 60px);
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.eye .box {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+.sec {
+  text-align: center;
+  padding: 100px 0;
+  /* 上下のみ100px */
+}
+.sec h2 {
+  font-size: 38px;
+  font-family: 'Noto Sans CJK JP','noto-sans-cjk-jp', 'Noto Sans JP', sans-serif;
+  letter-spacing: 0.2em;
+}
+.sec h2 + .sub {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 80px;
+}
+@media screen and (max-width: 1000px) {
+	.sec {
+		padding: 50px 10px;
+		box-sizing: border-box;
+	}
+}
+
+/* ABOUT */
+.sec.about {
+  background: url(./img/illust_coffeebean.png) no-repeat bottom 30px right 50px;
+}
+.sec.about p {
+  line-height: 1.5em;
+}
+
+
+/* MENU */
+.sec.menu {
+  background: #f5f3f2;
+}
+.sec.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.sec.menu ul li {
+  margin-bottom: 50px;
+}
+.sec.menu ul li h3 {
+  font-weight: normal;
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 1000px) {
+	.sec.menu ul {
+		justify-content: space-around;
+	}
+}
+
+/* SET menu */
+.sec.setmenu {
+  background: url(./img/bk_menu.jpg) no-repeat center top;
+  background-size: cover;
+  /* 写真を最大限に表示 */
+  color: #fff;
+  text-align: left;
+}
+
+.sec.setmenu ul li {
+  display: flex;
+  justify-content: space-between;
+}
+.sec.setmenu ul li .imgbox {
+  width: 48%;
+}
+.sec.setmenu ul li .textbox {
+  width: 48%;
+}
+.sec.setmenu ul li .textbox h3 {
+  font-weight: normal;
+  margin: 5px 0;
+  font-size: 20px;
+}
+.sec.setmenu ul li .textbox p.price {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.sec.setmenu ul li:nth-child(2) {
+  flex-direction: row-reverse;
+  margin-top: 50px;
+}
+
+/* gogle map */
+.gogolemap iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/1;
+  /* ブラウザのウィンドウの大きさを変更しても、画像のアスペクト比が 3/1に保持される */
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 768px) {
+  .sec.setmenu {
+    padding: 80px 10px;
+  }
+  .sec.setmenu ul li {
+    flex-direction: column !important;
+    /* 上から下に配置することが最優先 */
+  }
+  .sec.setmenu ul li .imgbox {
+    width: 100%;
+  }
+  .sec.setmenu ul li .imgbox img {
+    width: 100%;
+  }
+  .sec.setmenu ul li .textbox {
+    width: 100%;
+  }
+
+  .gogolemap iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2/1;
+  }
+}
+
+/* ACCESS */
+.sec.access {
+  background: url(./img/illust_pot.png) no-repeat top 100px left 100px;
+}
+.sec.accsess .address {
+    line-height: 3.0em; 
+  }
+
+footer {
+  background: #124222;
+}
+footer .copyright {
+  text-align: center;
+  padding: 10px 0;
+  color: #fff;
+  font-size: 12px;
+}
